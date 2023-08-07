@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* a mrdida do tamanho da caixa, para que seja medida através da borda*/
+}
+/* abaixo vamos ter o cotogo usado para fazer o modo light*/
+:root {
+  --text-color: white;
+  --bg-url: url(./Assetes/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./Assetes/MoonStars.svg);
+}
+.light {
+  --text-color: black;
+  --bg-url: url(./Assetes/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --surface-color: rgba(0, 0, 0, 0.1);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./Assetes/Sun.svg);
+}
+
+body {
+  background: var(--bg-url) no-repeat top center/cover;
+  /* para pôr uma imagem no Background */
+  /* background-repeat: no-repeat; /* para que essa imagem não se repita */
+  /*background-position: top center; /* para sentralizar a imagem (x e y) */
+  /* background-size: cover; /* para cobrir todo o espaço visivel */
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  /* border: 1px solid/*333;*/ /* para por uma borda na div container // comentar esse bloco */
+  /*height: 712px; // altura da container, apenas para ter ideia da altura*/
+
+  /*  vamos alinhar a container ao meio usando o metodo MARGIN */
+
+  /* margin-right: auto; /* vai deixar a margem toda na dirita automaticamente */
+  /* margin-left: auto; /* vai deixar a margem toda na esquerda automaticamente */
+
+  /* podermos usar apenas a propriedade (MARGIN: AUTO) para fezer a mesma coisa*/
+  width: 360px; /* largura da container */
+  /*margin: auto; /* espaço entre os elementos automatico*/
+  margin: 56px auto 0px;
+
+  padding: 0 24px;
+}
+
+/* vamos estilizar a imagem dentro da div profile*/
+/* no caso e abaixo estamos chamando a div profile seguida do atributo IMG que indica a estilização da imagem*/
+
+#profile {
+  text-align: center;
+  /* com a a propriedade TEXT-ALIGN aplicada a classe pai podemos alinha a classe filha (IMG) da forma que quisermos*/
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+  margin: auto;
+  /* Acabamos de pôr um tamanho na nossa imagem usado os parametros do Figma*/
+}
+#profile p {
+  font-weight: 500; /*para tornar a fonte mais forte*/
+  line-height: 24px; /*altuta da linha*/
+  margin-top: 8px; /* para colocara margem entre o perfil e o meu nome*/
+}
+/*swithch*/
+#switch {
+  /*border: 1px solid red;*/
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center; /* propriedades usadas para não repetir a imagem e posicionar ao centro*/
+  border: 0;
+  border-radius: 50%;
+  /* sobreposição , através do {position: absolute;} vamos liberar a propriedade (z-index) que usamos para movimentar os elementos */
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+/** para vovimentar o Switch*/
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  /* o span tem o display inline por padrão, presesisamos mudar para block*/
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* Links */
+ul {
+  list-style: none;
+  /* vamos dar espaços entre os elementos, alinha como colunas e ajustar de forma flexivel */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0;
+}
+
+ul li a {
+  /*border: 1px solid #333;*/
+  display: flex;
+  align-items: center; /* para alinha ao centro do bloco*/
+  justify-content: center; /* para alinhar os elementos ao meio*/
+
+  padding: 16px 24px;
+
+  height: 52px; /* para dar altura na caixa*/
+  background: var(--surface-color); /* RED GREE BLUE ALFA { TRANSPARENCIA}*/
+  border: 1px solid var(--stroke-color); /* arredondar as bordas*/
+  border-radius: 8px; /* arredondar bordas*/
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none; /* para tirar a linha de baixo */
+  font-weight: 500; /* deixar fonte forte*/
+
+  transition: background 0.2s; /* para fazer uma transição de uma cor para outra no efeito hover*/
+  /*background-color: rgba(255, 255, 255, 0.1);*/
+}
+
+ul li a:hover {
+  /* repare o comportamento dos atributos no bloco anerior */
+  background-color: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+/* social links*/
+#social-links {
+  display: flex; /*para abilitar  o gap*/
+  justify-content: center; /* para alinhar ao meio*/
+  /*gap: 16px; /* para dar espaçamento entre os icones*/
+
+  padding: 24px 0;
+
+  font-size: 24px; /* para padronozar os tamanhos*/
+}
+
+#social-links a {
+  /*para alinhar o efeito hover*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+
+/*Rodapé*/
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="light">
+  <!-- A classe light será usada para fazer a trasição para o efito ligth-->
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <!-- (DIV) é uma tag de caixa generica sem estilo nenhum, nese caso é o Container-->
+      <div id="profile">
+        <!--aqui eu usei um atalho para fazer uma div (# + enter), bolinha do perfil-->
+        <img src="./Assetes/avatar_w.png" alt="Wantuner" />
+        <!-- O ALT nada mais é que um texto  informativo sobre a imagem que será exibido caso o navegador não encontre ela-->
+        <p>Wantuner Santos</p>
+      </div>
+      <!-- Botão que vai mudar os modos de visuazação da pagina, através da função TOGGLEMODE, OBS: atributo ONCLICK do html chama a função -->
+      <div id="switch" onclick="toggleMode()">
+        <button></button>
+        <span></span>
+      </div>
+      <!-- Nessa sessão valos ter os butões com os links -->
+      <ul>
+        <!-- (UL) é usado para criar listas não ordenadas -->
+        <li>
+          <!-- (LI) é um item da lista -->
+          <a href="#">Projeto 1</a>
+          <!-- (A) é o link -->
+        </li>
+
+        <li>
+          <a href="#">Projeto 2</a>
+        </li>
+
+        <li>
+          <a href="https://www.instagram.com/wantuner_1998/" target="_blank"
+            >Projeto 3</a
+          >
+          <!--Usando o atributo (TARGET) o cliente não sairá  da minha pagina ao abrir o link-->
+        </li>
+
+        <li>
+          <a href="#">Projeto 4</a>
+        </li>
+      </ul>
+
+      <div id="social-links">
+        <a>
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a>
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+        <a>
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </a>
+        <a href="https://www.instagram.com/wantuner_1998/" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+      </div>
+      <footer>Projeto em andamento</footer>
+    </div>
+    <!-- Script que alimenta a minha pagina com os icones-->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
