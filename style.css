@@ -48,8 +48,9 @@ body * {
   /* margin-left: auto; /* vai deixar a margem toda na esquerda automaticamente */
 
   /* podermos usar apenas a propriedade (MARGIN: AUTO) para fezer a mesma coisa*/
-  width: 360px; /* largura da container */
+  width: 100%; /* largura da container */
   /*margin: auto; /* espaço entre os elementos automatico*/
+  max-width: 588px;
   margin: 56px auto 0px;
 
   padding: 0 24px;
