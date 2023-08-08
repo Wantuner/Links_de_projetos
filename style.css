@@ -98,11 +98,15 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  animation: deslise_voltando 0.2s forwards;
 }
 /** para vovimentar o Switch*/
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: deslise_indo 0.2s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -194,5 +198,28 @@ footer {
   }
   .light {
     --bg-url: url(./Assetes/bg-desktop-light.jpg);
+  }
+}
+
+/* Animação */
+@keyframes deslise_indo {
+  /* de começa*/
+  from {
+    left: 0;
+  }
+  /* de termina*/
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes deslise_voltando {
+  /* de começa*/
+  from {
+    left: 50%;
+  }
+  /* de termina*/
+  to {
+    left: 0;
   }
 }
